@@ -1,10 +1,11 @@
-# sato
+# SATO: Semantic Archive for TLH Orthography
 # Monolingual dictionary project related to constructed auxiliary languages ISO 639-2 "tlh".
 
 LaTeX-based documentation project.
 
 ## Contributors
 Unless it makes sense, try to limit each commit to one entry update and specify it in the log.
+
 Format (png picture optional):
 ```
 \entry{baghneQ}{dip}{tera' SommI'. SopmeH ghevjurHom.}[bagneq.png]
