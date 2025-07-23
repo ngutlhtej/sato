@@ -5,6 +5,11 @@ LaTeX-based documentation project.
 
 ## Contributors
 Unless it makes sense, try to limit each commit to one entry update and specify it in the log.
+Format (png picture optional):
+```
+\entry{baghneQ}{dip}{tera' SommI'. SopmeH ghevjurHom.}[bagneq.png]
+\entry{baH}{wot}{HIvmeH pagh HubmeH peng puvmoH.}
+```
 
 ## Output
 
