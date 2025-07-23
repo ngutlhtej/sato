@@ -3,6 +3,9 @@
 
 LaTeX-based documentation project.
 
+## Contributors
+Unless it makes sense, try to limit each commit to one entry update and specify it in the log.
+
 ## Output
 
 The generated PDF is available here:
