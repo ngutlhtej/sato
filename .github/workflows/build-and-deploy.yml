@@ -29,7 +29,11 @@ jobs:
           echo '.warning { background-color: #ffcc00; color: #000; font-weight: bold; font-size: 1.5em; padding: 1em; text-align: center; border-bottom: 2px solid #000; }' >> index.html
           echo '.footer { font-size: 0.9em; text-align: center; margin-top: 20px; padding: 10px; color: #444; }' >> index.html
           echo '</style></head><body>' >> index.html
-          echo '<div class="warning">WORK IN PROGRESS - NOT A REFERENCE DOCUMENT</div>' >> index.html
+          echo '<div class="warning">WORK IN PROGRESS - NOT A REFERENCE DOCUMENT' >> index.html
+          echo 'PDF licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>.' >> index.html
+          echo ' Source code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3+</a>.' >> index.html
+          echo ' View source on <a href="https://github.com/ngutlhtej/sato">GitHub</a>.' >> index.html
+          echo '</div>' >> index.html
           echo '<embed src="sato.pdf" type="application/pdf" width="100%" height="1000px"/>' >> index.html
           echo '<div class="footer">' >> index.html
           echo 'PDF licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>.' >> index.html
