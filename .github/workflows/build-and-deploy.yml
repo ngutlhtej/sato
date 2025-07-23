@@ -12,15 +12,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install TeX Live with xelatex
+      - name: Install TeX Live with xelatex and full fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-recommended texlive-latex-extra
 
-      - name: Compile PDF
+      - name: Compile PDF from sato.tex
         run: xelatex -interaction=nonstopmode sato.tex
 
-      - name: Create index.html with licensing and links
+      - name: Create index.html with license and warning
         run: |
           echo '<!DOCTYPE html>' > index.html
           echo '<html><head><meta charset="UTF-8"><title>Sato - PDF Output</title>' >> index.html
