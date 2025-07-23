@@ -1,0 +1,8 @@
+The PDF output is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0).
+
+You are free to copy and distribute the file, provided that:
+- You give appropriate credit to the author.
+- You do not modify the file.
+- You do not imply endorsement by the author.
+
+Full license text: https://creativecommons.org/licenses/by-nd/4.0/

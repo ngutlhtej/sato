@@ -1,0 +1,372 @@
+% Build with: xelatex sato.tex 
+% Project: sato
+% Source licensed under GPLv3+
+% Output PDF licensed under CC BY-ND 4.0
+% Repository: https://github.com/ngutlhtej/sato
+\documentclass[10pt]{article}
+\usepackage[paperwidth=18cm, paperheight=26cm, top=2mm, bottom=5mm, left=4mm, right=4mm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleRed}{HTML}{f4ca9d}
+\pagecolor{PaleRed}
+\usepackage{fontspec}
+\usepackage{GaramondLibre}
+\setmainfont{Garamond Libre}
+\newfontfamily\pIqaD[Path=./, Scale=0.6]{kapiqad.ttf}
+\newfontfamily\pIqaDlarge[Path=./, Scale=0.8]{kapiqad.ttf}
+\newfontfamily\pIqaDHuge[Path=./, Scale=2]{kapiqad.ttf}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{xparse}
+\usepackage[normalem]{ulem}
+\usepackage{parskip}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.8em}
+\setlength{\columnseprule}{0.4pt}
+\usepackage{ragged2e}
+\RaggedRight
+
+\usepackage{xstring}
+% xifan hol mappings
+\newcommand{\processheadword}[1]{%
+  \StrSubstitute{#1}{tlh}{x}[\stepA]%
+  \StrSubstitute{\stepA}{ch}{c}[\stepB]%
+  \StrSubstitute{\stepB}{gh}{G}[\stepC]%
+  \StrSubstitute{\stepC}{ng}{f}[\stepD]%
+  \StrSubstitute{\stepD}{H}{h}[\stepE]%
+  \StrSubstitute{\stepE}{D}{d}[\stepF]%
+  \StrSubstitute{\stepF}{I}{i}[\stepG]%
+  \StrSubstitute{\stepG}{q}{k}[\stepH]%
+  \StrSubstitute{\stepH}{Q}{q}[\stepI]%
+  \StrSubstitute{\stepI}{S}{s}[\stepJ]%
+  \StrSubstitute{\stepJ}{G}{g}[\stepK]%
+  \StrSubstitute{\stepK}{'}{z}[\processedheadword]%
+}
+\newcommand{\todo}{{\sout{Lorem ipsum}}}
+\newlength{\headwordwidth}
+
+\NewDocumentCommand{\entry}{ m m m o }{%
+  \processheadword{#1}%
+  \settowidth{\headwordwidth}{\pIqaDlarge \processedheadword}%
+  \noindent
+  \IfNoValueTF{#4}{%
+    % No illustration
+    {\pIqaDlarge \processedheadword} {\tiny\textnormal{#1}}%
+    \hspace{0.5em}%
+    \textit{\tiny{(\pIqaD #2})} \small #3\par
+  }{%
+    % With illustration
+    \begin{minipage}{0.48\linewidth}
+      {\pIqaDlarge \processedheadword} {\tiny\textnormal{#1}}%
+      \hspace{0.5em}%
+      \textit{\tiny{(\pIqaD #2})} \small #3
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.48\linewidth}
+      \includegraphics[width=\linewidth]{#4}
+    \end{minipage}\par\vspace{1em}%
+  }%
+}
+
+\begin{document}\small
+\begin{center}
+{\large\pIqaDHuge > xifan hol muzgom >}
+\end{center}
+\vspace{0.5cm}
+\begin{multicols}{3}
+\section*{\centering \pIqaDHuge b}
+\entry{bay}{dip}\todo
+\entry{babton}{dip}\todo
+\entry{bach}{wot}\todo
+\entry{bach}{dip}\todo
+\entry{bachHa'}{wot}\todo
+\entry{bachghIng}{dip}\todo
+\entry{bachlu'meH chuq}{dip}\todo
+\entry{bagh}{wot}{Doch tlhegh je rarchu'.}
+\entry{baghHa'}{wot}\todo
+\entry{baghneQ}{dip}{tera' SommI'. SopmeH ghevjurHom.}[bagneq.png]
+\entry{baH}{wot}{HIvmeH pagh HubmeH peng puvmoH.}
+\entry{baHjan}{dip}\todo
+\entry{baHwI'}{dip}\todo
+\entry{baj}{wot}\todo
+\entry{bal}{dip}{tlhutlhlu'meH ngaSwI' tIn.}
+\entry{bam}{wot}\todo
+\entry{ban}{wot}\todo
+\entry{banmoH}{wot}\todo
+\entry{bang}{dip}{ghot neHbogh tIq.}
+\entry{bang bom}{dip}\todo
+\entry{bang pong}{dip}\todo
+\entry{baq}{wot}\todo
+\entry{baqghol}{dip}\todo
+\entry{baQ}{wot}\todo
+\entry{baQ}{wot}\todo
+\entry{baQ}{wot}\todo
+\entry{baQa'}{zalxik}{mu' QeHqu'.}
+\entry{baQpel}{dip}\todo
+\entry{bar}{wot}\todo
+\entry{barwI'}{dip}\todo
+\entry{bargh}{dip}\todo
+\entry{barot}{dip}\todo
+\entry{bartIq}{dip}\todo
+\entry{bartIq waq}{dip}\todo
+\entry{baS}{dip}{mItlhmeH Hap 'ugh.}
+\entry{baS Ha'on}{dip}\todo
+\entry{baS laSvargh}{dip}\todo
+\entry{baS SIrgh}{dip}\todo
+\entry{baS 'In}{dip}\todo
+\entry{baSta'}{dip}\todo
+\entry{batqul}{dip}\todo
+\entry{batlh}{dip}{SuvwI' quvmoHbogh ngoD.}
+\entry{batlh}{kuniz}\todo
+\entry{batlh bIHeghjaj.}{muzxeg}\todo
+\entry{batlh Daqawlu'taH.}{muzxeg}\todo
+\entry{batlh ghob yIpab.}{muzxeg}\todo
+\entry{batlh Heghlu'chugh noDnISbe' vay'.}{muzxeg}\todo
+\entry{batlh malja' DaHuq.}{muzxeg}\todo
+\entry{batlh potlh law' yIn potlh puS.}{muzxeg}\todo
+\entry{batlh qelDI' tlhIngan, lumbe'.}{muzxeg}\todo
+\entry{batlh tlhIngan Segh yIHub.}{muzxeg}\todo
+\entry{batlhHa'}{kuniz}\todo
+\entry{batlhHa' vanglu'taHvIS quv chavbe'lu'.}{muzxeg}\todo
+\entry{bav}{wot}{gho tlhe'taH.}
+\entry{bav}{dip}\todo
+\entry{baw'}{wot}\todo
+\entry{baw'Ha'}{wot}\todo
+\entry{baylaD}{dip}\todo
+\entry{bay'eS}{dip}\todo
+\entry{ba'}{wot}{Qambe'choH.}
+\entry{ba'qIn}{dip}\todo
+\entry{ba'Suq}{dip}\todo
+\entry{ba'Suq SIp}{dip}\todo
+\entry{beb}{dip}{qach yor. DungDaq lIchbogh bIQ SIS 'e' qoj peDbogh chal chuch 'e' qoj SuS 'e' bot 'ej qach qoD Qan 'oH.}
+\entry{beb mutlhwI'}{dip}\todo
+\entry{bech}{wot}{'oy' SIQtaH.}
+\entry{begh}{dip}{botmeH Duj luch.}
+\entry{begh botjan}{dip}\todo
+\entry{begh DaH}{dip}\todo
+\entry{beH}{dip}\todo
+\entry{bej}{wot}\todo
+\entry{bej}{wot}\todo
+\entry{bel}{wot}{tIvtaH.}
+\entry{bel}{dip}{tIvqu'ghach.}
+\entry{belHa'}{wot}\todo
+\entry{belHa'moH}{wot}\todo
+\entry{bel Qu'}{dip}\todo
+\entry{bem}{dip}\todo
+\entry{ben}{dip}\todo
+\entry{ben}{dip}\todo
+\entry{beng}{wot}\todo
+\entry{bep}{dip}\todo
+\entry{bep}{wot}\todo
+\entry{beq}{dip}\todo
+\entry{beq pa'mey}{dip}\todo
+\entry{beqpuj}{dip}\todo
+\entry{beQ}{wot}\todo
+\entry{ber}{wot}\todo
+\entry{bergh}{wot}\todo
+\entry{berghmoH}{wot}\todo
+\entry{bertlham}{dip}\todo
+\entry{bertlham taymey}{dip}\todo
+\entry{bertlham 'echlet}{dip}\todo
+\entry{beS}{wot}\todo
+\entry{bet}{wot}\todo
+\entry{betgham}{dip}\todo
+\entry{betleH}{dip}\todo
+\entry{betleH bey'}{dip}\todo
+\entry{betleH 'obe'}{dip}\todo
+\entry{bettI'}{dip}\todo
+\entry{bewSom}{dip}\todo
+\entry{bewSom pa'}{dip}\todo
+\entry{bewSom qach}{dip}\todo
+\entry{bey}{dip}\todo
+\entry{beyHom bey bey'a' jachtaH}{muzxeg}\todo
+\entry{beylana}{dip}\todo
+\entry{beylI'}{dip}\todo
+\entry{bey'}{dip}\todo
+\entry{bey'jor}{dip}\todo
+\entry{bey'jorngan}{dip}\todo
+\entry{be'}{dip}{HuQ'am yutlheghDaq loD Dop ngu'eghbogh ghot'e'. motlh puqpu' boghmoHlaH ghotvam 'ej SoS SuvwI' je mojlaH 'ej be'nal mojmeH naylaH. may'Daq loD be' je rap 'ach 'op ret chutmeymo' ngo' yejquvDaq jeSlaHbe' ghotvam 'ej tuq DevlaHbe' je.}[bez.png]
+\entry{be'etor}{dip}\todo
+\entry{be'Hom}{dip}\todo
+\entry{be'nal}{dip}{lIwnal ghajbogh be'.}
+\entry{be'nI'}{dip}{tuqDaq nIb boghbogh be'.}
+\entry{be'taSeD}{dip}\todo
+\entry{bI-}{wot}\todo
+\entry{bID}{dip}\todo
+\entry{bIDIlbe'chugh vaj bIHegh!}{muzxeg}\todo
+\entry{bIghHa'}{dip}\todo
+\entry{bIH}{dip}\todo
+\entry{bIHeghvIpchugh bIHeghpu'.}{muzxeg}\todo
+\entry{bIj}{wot}\todo
+\entry{bIj}{dip}\todo
+\entry{bIjatlhHa'chugh qaHoH.}{muzxeg}\todo
+\entry{bIjatlh 'e' yImev!}{muzxeg}\todo
+\entry{bIjatlh 'e' yImev. yItlhutlh!}{muzxeg}\todo
+\entry{bIjeghbe'chugh vaj bIHegh!}{muzxeg}\todo
+\entry{bIje'be'chugh vaj bIHegh!}{muzxeg}\todo
+\entry{bIlemtan}{dip}\todo
+\entry{bIleSnIS.}{muzxeg}\todo
+\entry{bIlugh.}{muzxeg}\todo
+\entry{bIlughbe'.}{muzxeg}\todo
+\entry{bIlujlaHbe'chugh bIQaplaHbe'.}{muzxeg}\todo
+\entry{bIm}{dip}\todo
+\entry{bImejDI' reH betleHlIj yItlhap.}{muzxeg}\todo
+\entry{bImoHqu'.}{muzxeg}\todo
+\entry{bInajtaHvIS qeylIS Daghomjaj.}{muzxeg}\todo
+\entry{bIng}{dip}\todo
+\entry{bInglan}{dip}\todo
+\entry{bIp}{dip}\todo
+\entry{bIp'uy'}{dip}\todo
+\entry{bIpIvHa'law'.}{muzxeg}\todo
+\entry{bIQ}{dip}{taDbe'bogh chuch tlhutlhlu'bogh.}
+\entry{bIQ bal}{dip}\todo
+\entry{bIQ beb}{dip}\todo
+\entry{bIQ Duj}{dip}\todo
+\entry{bIQ ghaywI' pa'}{dip}\todo
+\entry{bIQ ghItmoHwI'}{dip}\todo
+\entry{bIQ na'}{dip}\todo
+\entry{bIQ notron}{dip}\todo
+\entry{bIQ ngaS HIvje'.}{muzxeg}\todo
+\entry{bIQ SeHjan}{dip}\todo
+\entry{bIQ SeHmeH jan}{dip}\todo
+\entry{bIQDep}{dip}\todo
+\entry{bIQSIp}{dip}\todo
+\entry{bIQSIp 'ugh}{dip}\todo
+\entry{bIQtIq}{dip}{nI'taHbogh bIQ.}[biqtik.png]
+\entry{bIQ'a'}{dip}\todo
+\entry{bIQ'a' HeH}{dip}\todo
+\entry{bIQ'a'Daq 'oHtaH 'etlh'e'.}{muzxeg}\todo
+\entry{bIQapqu'meH tar DaSop 'e' DatIvnIS.}{muzxeg}\todo
+\entry{bIQongtaHvIS nItlhejchugh targhmey bIvemDI' nItlhej ghIlab ghewmey.}{muzxeg}\todo
+\entry{bIQyIn}{dip}\todo
+\entry{bIr}{wot}{tujHa'.}
+\entry{bIraqlul}{dip}\todo
+\entry{bIrchoH SuvwI' 'Iw.}{muzxeg}\todo
+\entry{bIrchugh qIvon tuj 'Iw.}{muzxeg}\todo
+\entry{bIreqtal}{dip}\todo
+\entry{bIreQ}{dip}\todo
+\entry{bIreQtagh}{dip}\todo
+\entry{bISovbejbe'DI' tImer.}{muzxeg}\todo
+\entry{bISutlhnISchugh jaghlI' mInDu' tIbej.}{muzxeg}\todo
+\entry{bISuv 'e' yIwIv; bISutlh 'e' yIwIvQo'.}{muzxeg}\todo
+\entry{bISuvtaHvIS bIHeghjaj!}{muzxeg}\todo
+\entry{bIS'ub}{dip}\todo
+\entry{bIt}{wot}{jotHa'.}
+\entry{bItaHrup'a'?}{muzxeg}\todo
+\entry{bItuHlaHbe'chugh bIquvlaHbe'.}{muzxeg}\todo
+\entry{bItuHpa' bIHeghjaj.}{muzxeg}\todo
+\entry{bItlh}{wot}\todo
+\entry{bIv}{wot}\todo
+\entry{bIyaj'a'?}{muzxeg}\todo
+\entry{bIyem'a'?}{muzxeg}\todo
+\entry{bIyIntaH 'e' Daqotlhbe'.}{muzxeg}\todo
+\entry{bI'}{wot}\todo
+\entry{bI'IQchugh yIvang!}{muzxeg}\todo
+\entry{bI'raD}{dip}\todo
+\entry{bI'rel tlharghDuj}{dip}\todo
+\entry{bI'reS}{dip}\todo
+\entry{bI'reS taymey}{dip}\todo
+\entry{bI'reS 'echlet}{dip}\todo
+\entry{bo}{dip}\todo
+\entry{bo-}{wot}\todo
+\entry{bobcho'}{dip}\todo
+\entry{bobDar}{dip}\todo
+\entry{boch}{wot}{wovqu'.}
+\entry{bochmoHwI'}{dip}\todo
+\entry{boD}{dip}\todo
+\entry{bogh}{wot}{yInchoH. QIvmo' tlheD.}
+\entry{bogh tlhInganpu', SuvwI'pu' moj, Hegh.}{muzxeg}\todo
+\entry{boghoy}{dip}\todo
+\entry{boH}{wot}{loS neHbe'.}
+\entry{boj}{wot}\todo
+\entry{bol}{wot}\todo
+\entry{bol}{wot}{nujvo' bIQ qang.}
+\entry{bolwI'}{dip}\todo
+\entry{bom}{dip}\todo
+\entry{bom}{wot}\todo
+\entry{bom mu'}{dip}\todo
+\entry{bomDI' 'IwwIj qaqaw.}{muzxeg}\todo
+\entry{bomwI'}{dip}\todo
+\entry{bon}{wot}\todo
+\entry{bong}{kuniz}\todo
+\entry{bop}{wot}\todo
+\entry{boq}{dip}\todo
+\entry{boq}{dip}\todo
+\entry{boq}{wot}\todo
+\entry{boq}{wot}{yeqchoH.}
+\entry{boqHa'}{wot}\todo
+\entry{boq'egh}{wot}\todo
+\entry{boqHa''egh}{wot}\todo
+\entry{boq Hol}{dip}\todo
+\entry{boq ru'}{dip}\todo
+\entry{boqHar}{dip}\todo
+\entry{boqrat}{dip}\todo
+\entry{boqyIn}{dip}\todo
+\entry{boQ}{dip}\todo
+\entry{boQ}{dip}\todo
+\entry{boQ}{wot}{QaH.}
+\entry{boQDu'}{dip}\todo
+\entry{boQ Hol}{dip}\todo
+\entry{bor}{wot}\todo
+\entry{borqu'}{wot}\todo
+\entry{borgh}{dip}\todo
+\entry{borghel}{dip}\todo
+\entry{bortaS}{dip}{QeH nI' Qu'.}
+\entry{bortaS bIr jablu'DI' reH QaQqu' nay'.}{muzxeg}\todo
+\entry{bortaS DIb}{dip}\todo
+\entry{bortaS nIvqu' 'oH bortaS'e'.}{muzxeg}\todo
+\entry{boS}{wot}\todo
+\entry{bot}{wot}\todo
+\entry{bot}{wot}{chaw'be'.}
+\entry{botjan}{dip}\todo
+\entry{botjan HoS SIlwI'}{dip}\todo
+\entry{botjan yIchu'!}{muzxeg}\todo
+\entry{botlh}{dip}\todo
+\entry{botlh}{dip}\todo
+\entry{bov}{dip}\todo
+\entry{bov tIQ}{dip}\todo
+\entry{bo'Dagh}{dip}\todo
+\entry{bo'Dagh'a' lo'}{muzxeg}\todo
+\entry{bo'DaghHom lo'}{muzxeg}\todo
+\entry{bo'Degh}{dip}{chalDaq ghoSlaHbogh Ha'DIbaH.}
+\entry{bo'DIj}{dip}\todo
+\entry{bo'DIj nompuq}{dip}\todo
+\entry{bo'DIj pa'}{dip}\todo
+\entry{bo'DIj qach}{dip}\todo
+\entry{bo'DIj qaD}{dip}\todo
+\entry{bo'ghey}{dip}\todo
+\entry{bo'retlh}{dip}\todo
+\entry{bo'voD}{dip}\todo
+\entry{buD}{wot}{nom Qu' ta'be'.}
+\entry{buj}{wot}\todo
+\entry{bulvar}{dip}\todo
+\entry{bum}{wot}\todo
+\entry{bup}{wot}\todo
+\entry{buQ}{wot}{Hegh 'ang.}
+\entry{buq}{dip}\todo
+\entry{buq Quj}{dip}\todo
+\entry{buq yopwaH}{dip}\todo
+\entry{buq yopwaH bID}{dip}\todo
+\entry{buqjaj}{dip}\todo
+\entry{buq'ach}{dip}\todo
+\entry{buq'Ir}{dip}\todo
+\entry{bur}{wot}\todo
+\entry{bur DIS}{muzxeg}\todo
+\entry{burgh}{dip}\todo
+\entry{burgh quD}{dip}\todo
+\entry{buS}{wot}{wa' Doch neH legh.}
+\entry{buSHa'}{wot}{chotlhHa'.}
+\entry{buSHach}{dip}\todo
+\entry{but}{wot}\todo
+\entry{butnat}{dip}\todo
+\entry{butlh}{dip}\todo
+\entry{butlh}{dip}{toDuj.}
+\entry{butlh ghajbogh nuv'e' yIHo'.}{muzxeg}\todo
+\entry{buv}{dip}\todo
+\entry{buv}{wot}\todo
+\entry{buy'}{wot}\todo
+\entry{buy' ngop}{zalxik}\todo
+\entry{bu'}{dip}{QI' patlh; mochDaj ghaH Sogh'e' 'ej bay'eSDaj ghaH Da''e'}
+\end{multicols}
+\end{document}
