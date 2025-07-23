@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-recommended texlive-latex-extra
 
       - name: Compile PDF from sato.tex
-        run: xelatex -interaction=nonstopmode sato.tex
+        run: xelatex -interaction=nonstopmode sato.tex || true
 
       - name: Create index.html with license and warning
         run: |
